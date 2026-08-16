@@ -1164,8 +1164,9 @@ const PROJECTS_DATA = [
             { icon: "fa-solid fa-feather", text: "Keeping animations smooth without hurting performance" }
         ],
         technologies: ["HTML5", "CSS3", "JavaScript"],
-        github: "https://github.com/abdelrahmanOsman2525",
-        demo: "https://github.com/abdelrahmanOsman2525"
+        github: "https://github.com/abdelrahmanOsman2525/abdelrahmanOsman2525.github.io",
+        demo: "#",
+        isCurrentSite: true
     }
 ];
 
@@ -1218,7 +1219,24 @@ function initProjectModal() {
         techEl.innerHTML = project.technologies
             .map(tag => `<span class="details-tag">${tag}</span>`)
             .join("");
-        demoEl.href = project.demo;
+        if (project.isCurrentSite) {
+            demoEl.removeAttribute("href");
+            demoEl.removeAttribute("target");
+            demoEl.classList.add("current-site-btn");
+
+            demoEl.innerHTML = `
+            <i class="fa-solid fa-location-dot"></i>
+            You're Here`;
+        } else {
+            demoEl.href = project.demo;
+            demoEl.target = "_blank";
+            demoEl.classList.remove("current-site-btn");
+
+            demoEl.innerHTML = `
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Live Demo`;
+        }
+
         githubEl.href = project.github;
 
         lastFocused = document.activeElement;

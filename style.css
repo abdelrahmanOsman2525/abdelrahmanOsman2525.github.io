@@ -1572,6 +1572,31 @@ body {
     margin-top: 6px;
 }
 
+.current-site-btn {
+    cursor: default;
+    opacity: 0.9;
+}
+
+.current-site-btn:hover {
+    transform: none;
+}
+
+.current-site-btn i {
+    animation: currentSitePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes currentSitePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
 /*==================================================
                 ABOUT
 ===================================================*/
