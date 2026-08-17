@@ -183,7 +183,7 @@
                 <h2 class="section-title">Projects</h2>
                 <p class="tagline">A few things I've been building</p>
                 <p class="section-note">
-                    Sample placeholder projects — replace with your real project names, images and links.
+                    Sample placeholder projects — With real project names, images and links.
                 </p>
             </header>
 
@@ -368,6 +368,10 @@
 
                     </div>
 
+                    <p class="stages-swipe-hint" id="stagesSwipeHint" aria-hidden="true">
+                        <i class="fa-solid fa-arrows-left-right"></i> Swipe to see more
+                    </p>
+
                     <div class="journey-progress">
                         <span class="journey-progress-label">Journey Progress</span>
                         <div class="journey-progress-track">
@@ -539,7 +543,9 @@
 
             <section class="contact-card-list">
 
-                <article class="contact-card reveal" data-href="mailto:abdelrahman.osman2525@gmail.com">
+                <article class="contact-card reveal"
+                    data-href="https://mail.google.com/mail/?view=cm&fs=1&to=abdelrahman.osman2525@gmail.com"
+                    target="_blank" rel="noopener noreferrer" data-href-target="_blank">
                     <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                     <div class="contact-info">
                         <span class="contact-label">Email</span>
@@ -547,7 +553,8 @@
                     </div>
                     <div class="contact-action-group">
                         <button id="copyEmailBtn" class="btn btn-secondary" aria-label="Copy Email">Copy</button>
-                        <a href="mailto:abdelrahman.osman2525@gmail.com" class="contact-action"
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdelrahman.osman2525@gmail.com"
+                            target="_blank" rel="noopener noreferrer" class="contact-action"
                             aria-label="Send Email">Send <span>→</span></a>
                     </div>
                 </article>
@@ -645,6 +652,8 @@
                                 class="feedback-optional">(optional — so I can reply)</span></label>
                         <input type="email" id="feedbackEmail" name="email" class="feedback-input"
                             placeholder="you@example.com" autocomplete="email">
+                        <span class="feedback-error" id="feedbackEmailError" hidden>Please enter a valid email
+                            address, or leave it empty.</span>
                     </div>
                 </div>
 

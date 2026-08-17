@@ -835,10 +835,20 @@ function initFeedbackWidget() {
         document.getElementById("feedbackMessage");
     const errorEl =
         document.getElementById("feedbackError");
+    const emailField =
+        document.getElementById("feedbackEmail");
+    const emailErrorEl =
+        document.getElementById("feedbackEmailError");
     const submitBtn =
         document.getElementById("feedbackSubmitBtn");
 
     if (!fab || !overlay || !form) return;
+
+    // Reasonable email format check — good enough to catch obvious
+    // typos/garbage without being overly strict about edge cases.
+    function isValidEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim());
+    }
 
     function openModal() {
         overlay.hidden = false;
@@ -920,6 +930,18 @@ function initFeedbackWidget() {
         );
     }
 
+    if (emailField && emailErrorEl) {
+        emailField.addEventListener(
+            "input",
+            () => {
+                if (isValidEmail(emailField.value) || !emailField.value.trim()) {
+                    emailErrorEl.hidden = true;
+                    emailField.removeAttribute("aria-invalid");
+                }
+            }
+        );
+    }
+
     // ---- submit ----
     form.addEventListener(
         "submit",
@@ -934,6 +956,17 @@ function initFeedbackWidget() {
                 return;
             }
             if (errorEl) errorEl.hidden = true;
+
+            // Email is optional, but if something was typed in it must
+            // actually look like a real address — otherwise there's no
+            // way to reply, and it silently looked like it "worked".
+            if (emailField && emailField.value.trim() && !isValidEmail(emailField.value)) {
+                if (emailErrorEl) emailErrorEl.hidden = false;
+                emailField.setAttribute("aria-invalid", "true");
+                emailField.focus();
+                return;
+            }
+            if (emailErrorEl) emailErrorEl.hidden = true;
 
             if (FORMSPREE_FORM_ID === "YOUR_FORM_ID_HERE") {
                 showToast("Feedback form isn't connected yet — add a Formspree ID in script.js");
@@ -1426,6 +1459,10 @@ const TIMELINE_STAGES = [
 function initTimelineInteractive() {
     const stageButtons =
         document.querySelectorAll(".stage-btn");
+    const stagesTrack =
+        document.getElementById("timelineStages");
+    const swipeHint =
+        document.getElementById("stagesSwipeHint");
     const detailsPanel =
         document.getElementById("timelineDetails");
     const iconEl =
@@ -1499,6 +1536,9 @@ function initTimelineInteractive() {
                 Number(btn.dataset.stage) === index;
             btn.classList.toggle("active", isActive);
             btn.setAttribute("aria-selected", isActive ? "true" : "false");
+            // On the mobile horizontal-scroll row, tapping a stage that's
+            // only partly visible should bring it fully into view instead
+            // of leaving it clipped at the edge.
         });
 
         // Cancel any fade already in flight — without this, moving the
@@ -1537,6 +1577,10 @@ function initTimelineInteractive() {
             () => switchStage(index)
         );
     });
+
+    // Mobile "swipe to see more" hint — dismiss the first time the
+    // person actually scrolls the row, so it doesn't linger once
+    // they've discovered it.
 
     // Default state — first stage filled in and active on load.
     renderStage(0);
@@ -1598,4 +1642,3 @@ if (copyEmailButton) {
 /*==================================================
                 END OF FILE
 ==================================================*/
-

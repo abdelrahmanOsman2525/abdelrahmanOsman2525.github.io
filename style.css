@@ -1601,17 +1601,34 @@ body {
                 ABOUT
 ===================================================*/
 
+/* ==================================================
+   TIMELINE – إصلاح شامل للموبايل والتابلت
+=================================================== */
+
 .timeline-interactive {
     display: grid;
-    grid-template-columns: minmax(220px, 300px) 1fr;
+    grid-template-columns: minmax(200px, 280px) 1fr;
     gap: 28px;
     margin-top: 40px;
-    align-items: start;
+    align-items: stretch;
 }
 
-@media(max-width: 768px) {
+/* Grid items default to min-width:auto, which lets their content's
+   intrinsic (max-content) width force the whole grid — and the
+   section around it — wider than the viewport. This is what was
+   pushing the timeline off-screen and clipping the text on the
+   right edge. min-width:0 lets them shrink to their track's size
+   so the inner .timeline-stages can do its own horizontal scroll
+   instead of blowing out the layout. */
+.timeline-stages-col,
+.timeline-details {
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
     .timeline-interactive {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
@@ -1635,17 +1652,45 @@ body {
     z-index: 0;
 }
 
-@media(max-width: 768px) {
-    .timeline-stages {
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 10px;
-        padding-bottom: 6px;
-        -webkit-overflow-scrolling: touch;
+/* ---- one-time "swipe" affordance (mobile only) ---- */
+
+.stages-swipe-hint {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .stages-swipe-hint {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: -6px;
+        font-size: .75rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        opacity: 1;
+        transition: opacity .3s ease;
     }
 
-    .timeline-stages::before {
-        display: none;
+    .stages-swipe-hint.is-hidden {
+        opacity: 0;
+    }
+
+    .stages-swipe-hint i {
+        font-size: .7rem;
+        animation: swipeHintNudge 1.4s ease-in-out infinite;
+    }
+}
+
+@keyframes swipeHintNudge {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(3px);
     }
 }
 
@@ -1667,10 +1712,11 @@ body {
         border-color var(--speed-fast) ease;
 }
 
-@media(max-width: 768px) {
-    .stage-btn {
-        flex-shrink: 0;
-        min-width: 200px;
+@media (max-width: 768px) {
+
+    .stage-info {
+        align-items: center;
+        text-align: center;
     }
 }
 
@@ -1729,7 +1775,7 @@ body {
 
 .stage-year {
     display: inline-block;
-    font-size: .72rem;
+    font-size: .82rem;
     font-weight: 800;
     letter-spacing: .4px;
     color: var(--text-muted);
@@ -1748,7 +1794,7 @@ body {
 }
 
 .stage-name {
-    font-size: .92rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-light);
     transition: color var(--speed-fast) ease;
@@ -1810,6 +1856,20 @@ body {
     border: 1px solid var(--border);
     min-height: 340px;
     transition: opacity .16s ease, transform .16s ease;
+}
+
+@media (max-width: 768px) {
+    .timeline-details {
+        padding: 24px 20px;
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-details {
+        padding: 18px 16px;
+        min-height: 220px;
+    }
 }
 
 .timeline-details.is-fading {
@@ -1924,15 +1984,47 @@ body {
     border-radius: 999px;
 }
 
+/* ==================================================
+                        ABOUT EXTRAS 
+=================================================== */
+
 .about-extras {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
-    grid-template-areas:
-        "card1 cpStats card3"
-        "card2 cpStats card4";
-    align-items: stretch;
     margin-top: 50px;
+}
+
+@media (min-width: 1024px) {
+    .about-extras {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "card1 cpStats card3"
+            "card2 cpStats card4";
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .about-extras {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "card1 cpStats"
+            "card2 cpStats"
+            "card3 card4";
+    }
+}
+
+@media (max-width: 767px) {
+    .about-extras {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-extras>* {
+        width: 100%;
+    }
 }
 
 .about-extras>.about-card:nth-child(1) {
@@ -1945,7 +2037,6 @@ body {
 
 .about-card.cp-extended {
     grid-area: cpStats;
-    height: 100%;
 }
 
 .about-extras>.learning-card {
@@ -2702,6 +2793,14 @@ body[data-theme="light"] .feedback-input {
     font-weight: 600;
 }
 
+.feedback-input[aria-invalid="true"] {
+    border-color: var(--danger);
+}
+
+.feedback-input[aria-invalid="true"]:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, .15);
+}
+
 /* Star rating — hovering a star previews it and every star before it
    (handled by JS toggling .hovered); clicking locks in .selected. */
 .star-rating {
@@ -2939,6 +3038,327 @@ body[data-theme="light"] .scroll-percentage {
 @media (min-width: 768px) {
     .cp-extended {
         grid-row: span 2;
+    }
+}
+
+/* ==================================================
+   MOBILE TIMELINE - 4 SQUARES
+   ================================================== */
+
+/* ==================================================
+   HORIZONTAL TIMELINE - FINAL POLISH
+   Starts when timeline becomes horizontal
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    /* ------------------------------------------
+       Timeline container
+       ------------------------------------------ */
+
+    .timeline-stages {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        gap: 8px;
+
+        padding: 24px 0 18px;
+
+        overflow: visible !important;
+
+        position: relative;
+    }
+
+
+    /* ------------------------------------------
+       Connecting line
+       ------------------------------------------ */
+
+    .timeline-stages::before {
+        content: "";
+
+        position: absolute;
+
+        left: 4%;
+        right: 4%;
+        top: 50%;
+
+        width: auto;
+        height: 2px;
+
+        background: linear-gradient(90deg,
+                rgba(59, 130, 246, .15),
+                rgba(59, 130, 246, .45),
+                rgba(59, 130, 246, .15));
+
+        transform: translateY(-50%);
+
+        z-index: 0;
+    }
+
+
+    /* ------------------------------------------
+       All timeline cards
+       ------------------------------------------ */
+
+    .timeline-stages .stage-btn {
+        flex: 1 1 0 !important;
+
+        width: 0 !important;
+        min-width: 0 !important;
+
+        height: 76px;
+        min-height: 76px;
+
+        padding: 10px 4px;
+
+        position: relative;
+        z-index: 1;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 16px;
+
+        background: linear-gradient(145deg,
+                rgba(30, 52, 85, .78),
+                rgba(13, 27, 48, .94));
+
+        border: 1px solid rgba(100, 150, 220, .15);
+
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, .035);
+
+        transition:
+            flex .3s ease,
+            height .3s ease,
+            transform .3s ease,
+            background .3s ease,
+            border-color .3s ease,
+            box-shadow .3s ease;
+    }
+
+
+    /* ------------------------------------------
+       Dot
+       ------------------------------------------ */
+
+    .timeline-stages .stage-dot {
+        position: absolute;
+
+        top: 9px;
+        left: 50%;
+
+        width: 7px;
+        height: 7px;
+
+        transform: translateX(-50%);
+
+        z-index: 3;
+    }
+
+
+    /* ------------------------------------------
+       Year
+       ------------------------------------------ */
+
+    .timeline-stages .stage-year {
+        font-size: .95rem;
+        font-weight: 800;
+
+        line-height: 1.15;
+
+        color: rgba(210, 220, 235, .75);
+
+        white-space: nowrap;
+    }
+
+
+    /* ------------------------------------------
+       Stage name
+       ------------------------------------------ */
+
+    .timeline-stages .stage-name {
+
+        /* اسم المرحلة يظهر فقط للـActive */
+        display: none;
+
+        /* إجبار الاسم على مساحة تسمح بسطرين */
+        width: 78px;
+        max-width: 78px;
+
+        margin-top: 3px;
+
+        font-size: .62rem;
+        line-height: 1.15;
+
+        font-weight: 700;
+
+        text-align: center;
+
+        color: rgba(240, 246, 255, .94);
+
+        white-space: normal;
+
+        overflow-wrap: normal;
+    }
+
+
+    /* ------------------------------------------
+       Active card
+       ------------------------------------------ */
+
+    .timeline-stages .stage-btn.active {
+        flex: 1.65 1 0 !important;
+
+        height: 92px;
+        min-height: 92px;
+
+        transform: translateY(-4px);
+
+        background: linear-gradient(145deg,
+                rgba(35, 91, 170, .52),
+                rgba(20, 50, 100, .62));
+
+        border-color: rgba(70, 145, 255, .78);
+
+        box-shadow:
+            0 0 20px rgba(45, 125, 255, .20),
+            inset 0 1px 0 rgba(255, 255, 255, .07);
+    }
+
+
+    /* ------------------------------------------
+       Active content
+       ------------------------------------------ */
+
+    .timeline-stages .stage-btn.active .stage-info {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 3px;
+
+        width: 100%;
+
+        margin-top: 7px;
+    }
+
+
+    /* ------------------------------------------
+       Active year
+       ------------------------------------------ */
+
+    .timeline-stages .stage-btn.active .stage-year {
+
+        color: #72adff;
+
+        background: rgba(55, 130, 255, .16);
+
+        padding: 3px 8px;
+
+        border-radius: 5px;
+
+        box-shadow:
+            0 0 10px rgba(55, 130, 255, .08);
+    }
+
+
+    /* ------------------------------------------
+       Active stage name
+       ------------------------------------------ */
+
+    .timeline-stages .stage-btn.active .stage-name {
+
+        display: block;
+
+        width: 92px;
+        max-width: 92px;
+
+        text-align: center;
+
+        /*
+         * يسمح بالالتفاف الطبيعي:
+         * Competitive
+         * Programming
+         *
+         * Started
+         * Programming
+         *
+         * Front-End
+         * Development
+         *
+         * Software
+         * Engineer
+         */
+
+        white-space: normal;
+
+        line-height: 1.2;
+
+        font-size: .78rem;
+
+        font-weight: 700;
+
+        color: rgba(245, 248, 255, .95);
+    }
+
+
+    /* ------------------------------------------
+       Active dot
+       ------------------------------------------ */
+
+    .timeline-stages .stage-btn.active .stage-dot {
+
+        width: 9px;
+        height: 9px;
+
+        transform: translateX(-50%) scale(1.15);
+    }
+
+
+    /* ------------------------------------------
+       Swipe hint
+       ------------------------------------------ */
+
+    .stages-swipe-hint {
+
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        margin: 6px auto 0;
+
+        text-align: center;
+
+        color: rgba(220, 230, 245, .65);
+
+        font-size: .72rem;
+        font-weight: 700;
+
+        letter-spacing: .15px;
+    }
+
+
+    .stages-swipe-hint i {
+
+        margin-right: 5px;
+
+        font-size: .7rem;
+
+        opacity: .8;
     }
 }
 
