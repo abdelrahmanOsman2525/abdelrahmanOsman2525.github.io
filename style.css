@@ -39,7 +39,12 @@
     --shadow-blue:
         0 0 40px rgba(59, 130, 246, .18);
     /* Blur */
-    --blur: 22px;
+    /* Lowered from 22px — large backdrop-filter blur regions (the glass
+       section cards + navbar) sitting on top of the always-animating
+       background/orbs were forcing an expensive blur recompute on every
+       frame, which is the main thing that made scrolling feel janky.
+       14px keeps the glass look at a much cheaper compositing cost. */
+    --blur: 14px;
     /* Animation */
     --transition:
         .35s cubic-bezier(.22, .61, .36, 1);
@@ -135,6 +140,19 @@ body::before {
     animation:
         floatOrb 18s ease-in-out infinite;
     will-change: transform;
+}
+
+/* Pause the background gradient + orb motion while actively scrolling
+   (see initScrollPerf in script.js) — these sit behind the glass panels'
+   backdrop-filter, and animating them forces a full blur recompute every
+   frame, which is what made scrolling feel heavy. They resume the moment
+   scrolling stops, so the idle look is unchanged. */
+body.is-scrolling::before {
+    animation-play-state: paused;
+}
+
+body.is-scrolling .blur-orb {
+    animation-play-state: paused;
 }
 
 .blur-orb.one {
@@ -1452,10 +1470,18 @@ body {
     background: rgba(255, 255, 255, .03);
     border: 1px solid var(--border);
     cursor: pointer;
+    /* This rule comes after .reveal in the file and has the same
+       specificity, so without an explicit "opacity" entry here it was
+       silently replacing .reveal's whole transition list — the
+       scroll-in fade never animated (opacity just jumped) and the
+       slide-up used .2s instead of the intended .5s. Adding opacity
+       here (matching .reveal's own .5s) fixes that while keeping the
+       hover response at the fast .2s. */
     transition:
         transform var(--speed-fast) ease,
         box-shadow var(--speed-fast) ease,
-        border-color var(--speed-fast) ease;
+        border-color var(--speed-fast) ease,
+        opacity .5s ease;
 }
 
 .project-card:hover {
@@ -1751,8 +1777,12 @@ body {
 }
 
 /* Future's dot looks exactly like the others until it's selected —
-   only then does it turn into the distinct rotating dashed ring. */
+   only then does it turn into the distinct rotating dashed ring.
+   Sized up a bit (16px vs the normal 12px) so the rotating dashed
+   ring reads clearly instead of looking like a small blur. */
 .stage-btn-future.active .stage-dot {
+    width: 16px;
+    height: 16px;
     background: transparent;
     border: 2px dashed var(--primary-light);
     box-shadow: 0 0 12px rgba(96, 165, 250, .5);
@@ -2068,7 +2098,8 @@ body {
     border: 1px solid var(--border);
     transition:
         transform var(--speed-fast) ease,
-        border-color var(--speed-fast) ease;
+        border-color var(--speed-fast) ease,
+        opacity .5s ease;
 }
 
 .learning-card:hover {
@@ -2106,7 +2137,8 @@ body {
     border: 1px solid var(--border);
     transition:
         transform var(--speed-fast) ease,
-        border-color var(--speed-fast) ease;
+        border-color var(--speed-fast) ease,
+        opacity .5s ease;
 }
 
 .fun-facts-card:hover {
@@ -2164,9 +2196,13 @@ body {
     border-radius: var(--radius-md);
     background: rgba(255, 255, 255, .03);
     border: 1px solid var(--border);
+    /* opacity is included here (not just transform/border-color) so this
+       rule doesn't silently cancel the .reveal fade-in transition —
+       see the note above .project-card for why that matters. */
     transition:
         transform var(--speed-fast) ease,
-        border-color var(--speed-fast) ease;
+        border-color var(--speed-fast) ease,
+        opacity .5s ease;
 }
 
 .about-card:hover {
@@ -2611,6 +2647,14 @@ body {
 body[data-theme="light"] .feedback-modal {
     background: #ffffff;
     border: 1px solid rgba(29, 78, 216, .15);
+}
+
+/* Empty stars use a near-white color that's invisible against this
+   theme's white modal card — give them a visible neutral tint here.
+   Hover/selected state (gold, set above) already has enough contrast
+   on both themes and is left untouched. */
+body[data-theme="light"] .star-btn {
+    color: rgba(15, 23, 42, .22);
 }
 
 .project-modal {
@@ -3325,6 +3369,14 @@ body[data-theme="light"] .scroll-percentage {
         transform: translateX(-50%) scale(1.15);
     }
 
+    /* Future stage's rotating dashed ring stays a bit bigger than the
+       other dots here too, same reasoning as the desktop size bump. */
+    .timeline-stages .stage-btn-future.active .stage-dot {
+
+        width: 13px;
+        height: 13px;
+    }
+
 
     /* ------------------------------------------
        Swipe hint
@@ -3359,6 +3411,79 @@ body[data-theme="light"] .scroll-percentage {
         font-size: .7rem;
 
         opacity: .8;
+    }
+}
+
+/* ------------------------------------------------------------------
+   MOBILE TIMELINE — LIGHT MODE
+   The block above hard-codes a dark navy card (meant for the dark
+   theme) with no light-theme override, so on mobile the year/stage
+   squares stayed near-black even after switching to light mode.
+   These overrides bring the same cards in line with the rest of the
+   light theme.
+   ------------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+
+    body[data-theme="light"] .timeline-stages::before {
+        background: linear-gradient(90deg,
+                rgba(29, 78, 216, .12),
+                rgba(29, 78, 216, .4),
+                rgba(29, 78, 216, .12));
+    }
+
+    body[data-theme="light"] .timeline-stages .stage-btn {
+        background: linear-gradient(145deg,
+                rgba(255, 255, 255, .9),
+                rgba(238, 244, 255, .85));
+
+        border: 1px solid rgba(15, 23, 42, .1);
+
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, .6);
+    }
+
+    body[data-theme="light"] .timeline-stages .stage-year {
+        color: rgba(30, 41, 59, .7);
+    }
+
+    body[data-theme="light"] .timeline-stages .stage-name {
+        color: rgba(15, 23, 42, .85);
+    }
+
+    body[data-theme="light"] .timeline-stages .stage-btn.active {
+        background: linear-gradient(145deg,
+                rgba(191, 219, 254, .85),
+                rgba(219, 234, 254, .9));
+
+        border-color: rgba(29, 78, 216, .45);
+
+        box-shadow:
+            0 0 20px rgba(29, 78, 216, .12),
+            inset 0 1px 0 rgba(255, 255, 255, .7);
+    }
+
+    body[data-theme="light"] .timeline-stages .stage-btn.active .stage-year {
+        color: #1d4ed8;
+        background: rgba(29, 78, 216, .12);
+        box-shadow: 0 0 10px rgba(29, 78, 216, .08);
+    }
+
+    body[data-theme="light"] .timeline-stages .stage-btn.active .stage-name {
+        color: #0f172a;
+    }
+
+    body[data-theme="light"] .stages-swipe-hint {
+        color: rgba(30, 41, 59, .6);
+    }
+
+    /* Only the inactive dots get the neutral light-mode tint — the
+       active dot (and the future stage's dashed ring) already use
+       var(--primary)/var(--primary-light), which read fine on light
+       backgrounds, so excluding .active here keeps that blue from
+       being overridden by this same-specificity rule. */
+    body[data-theme="light"] .timeline-stages .stage-btn:not(.active) .stage-dot {
+        background: rgba(15, 23, 42, .18);
     }
 }
 

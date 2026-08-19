@@ -308,6 +308,36 @@ function initRipple() {
 }
 
 /*==================================================
+        SCROLL PERFORMANCE (pause background motion)
+==================================================*/
+
+// The animated gradient background and the 3 blurred orbs run forever,
+// sitting directly behind the glass panels that use backdrop-filter.
+// That combination forces the browser to recompute the blur every single
+// frame even while the page is just being scrolled, which is what was
+// making scrolling itself feel heavy/laggy. Pausing those two animations
+// for the brief moment the user is actively scrolling (and letting them
+// resume once scrolling settles) removes that cost from the scroll path
+// without changing how the page looks at rest.
+function initScrollPerf() {
+    let scrollTimeout = null;
+    window.addEventListener(
+        "scroll",
+        () => {
+            if (!body.classList.contains("is-scrolling")) {
+                body.classList.add("is-scrolling");
+            }
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(
+                () => body.classList.remove("is-scrolling"),
+                150
+            );
+        },
+        { passive: true }
+    );
+}
+
+/*==================================================
             PROGRESS BAR
 ==================================================*/
 
@@ -547,7 +577,7 @@ function initClickableCards() {
                     const target =
                         card.dataset.hrefTarget;
                     if (target) {
-                        window.open(href, target);
+                        window.open(href, target, "noopener,noreferrer");
                     }
                     else {
                         window.location.href = href;
@@ -1603,6 +1633,7 @@ document.addEventListener(
         initLoader();
         initRipple();
         initProgressBar();
+        initScrollPerf();
         initTyping();
         initCounters();
         initRevealAnimations();
