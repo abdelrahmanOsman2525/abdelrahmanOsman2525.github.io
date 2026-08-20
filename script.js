@@ -1174,7 +1174,7 @@ async function fetchCodeforcesStats() {
 
 const PROJECTS_DATA = [
     {
-        title: "TaskFlow — Task Manager",
+        title: "FindCoders Hub",
         icon: "devicon-react-original",
         colorA: "#3b82f6",
         colorB: "#1d4ed8",
@@ -1189,8 +1189,8 @@ const PROJECTS_DATA = [
             { icon: "fa-solid fa-database", text: "Designing a schema flexible enough for custom boards" }
         ],
         technologies: ["React", "Node.js", "MongoDB"],
-        github: "https://github.com/abdelrahmanOsman2525",
-        demo: "https://github.com/abdelrahmanOsman2525"
+        github: "https://github.com/abdelrahmanOsman2525/FindCoders-hub1",
+        demo: "https://abdelrahmanosman20.wixsite.com/futurecoders-hub-1"
     },
     {
         title: "Weather Now",
