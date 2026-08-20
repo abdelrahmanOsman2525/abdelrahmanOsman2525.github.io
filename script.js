@@ -345,24 +345,58 @@ function initScrollPerf() {
 function initProgressBar() {
     const scrollPercentageEl =
         document.getElementById("scrollPercentage");
+
+    // Reading scrollHeight forces the browser to run a full layout pass.
+    // Doing that on every single "scroll" event (which fires dozens of
+    // times per second) caused a read -> write -> read layout-thrashing
+    // loop and made scrolling feel like it was hanging. Instead we
+    // measure the page height once (and again on resize), and only touch
+    // the DOM at most once per animation frame while scrolling.
+    let docHeight = 0;
+
+    function measure() {
+        docHeight =
+            document.documentElement.scrollHeight -
+            window.innerHeight;
+    }
+
+    let ticking = false;
+
+    function updateBar() {
+        ticking = false;
+        const scroll =
+            window.scrollY;
+        const width =
+            docHeight > 0
+                ? (scroll / docHeight) * 100
+                : 0;
+        progressBar.style.width =
+            width + "%";
+        if (scrollPercentageEl) {
+            scrollPercentageEl.textContent =
+                Math.min(100, Math.max(0, Math.round(width))) + "%";
+        }
+    }
+
+    measure();
+
     window.addEventListener(
         "scroll",
         () => {
-            const scroll =
-                window.scrollY;
-            const height =
-                document.documentElement
-                    .scrollHeight -
-                window.innerHeight;
-            const width =
-                scroll /
-                height *
-                100;
-            progressBar.style.width =
-                width + "%";
-            if (scrollPercentageEl) {
-                scrollPercentageEl.textContent =
-                    Math.min(100, Math.max(0, Math.round(width))) + "%";
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(updateBar);
+        },
+        { passive: true }
+    );
+
+    window.addEventListener(
+        "resize",
+        () => {
+            measure();
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(updateBar);
             }
         },
         { passive: true }
@@ -524,6 +558,12 @@ function initRevealAnimations() {
                                 .add(
                                     "show"
                                 );
+                            // Nothing more to do for this element —
+                            // stop observing it so it doesn't keep
+                            // costing anything on future scroll frames.
+                            observer.unobserve(
+                                entry.target
+                            );
                         }
                     }
                 );
@@ -539,18 +579,27 @@ function initRevealAnimations() {
             );
         }
     );
-    // Safety net: guarantee every .reveal element becomes visible
-    // even if the IntersectionObserver never fires for it (e.g. an
-    // element that starts inside a display:none page).
+    // Safety net: guarantee every .reveal element eventually becomes
+    // visible even if the IntersectionObserver never fires for it
+    // (e.g. an element that starts inside a display:none section).
+    // This used to force-show EVERY .reveal element on the page after
+    // a fixed 1.2s, regardless of whether the user had scrolled anywhere
+    // near it yet — that defeated the scroll-reveal effect for anything
+    // below the fold, and made content look like it "popped in all at
+    // once" whenever the main thread was briefly busy. Now it only
+    // touches elements that are still hidden, and waits long enough
+    // that it never fires ahead of a normal scroll.
     setTimeout(
         () => {
             elements.forEach(
                 element => {
-                    element.classList.add("show");
+                    if (!element.classList.contains("show")) {
+                        element.classList.add("show");
+                    }
                 }
             );
         },
-        1200
+        4000
     );
 }
 
