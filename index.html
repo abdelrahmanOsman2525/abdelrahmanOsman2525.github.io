@@ -1,2077 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Abdelrahman Osman | Portfolio</title>
-
-    <meta name="description"
-        content="Professional portfolio of Abdelrahman Osman. Front-End Developer, UI Designer and Competitive Programmer.">
-
+    <meta name="description" content="Professional portfolio of Abdelrahman Osman. Front-End Developer, UI Designer and Competitive Programmer.">
     <meta name="theme-color" content="#3b82f6">
-
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23050816'/%3E%3Ctext x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%2360a5fa'%3EAO%3C/text%3E%3C/svg%3E">
-
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23050816'/%3E%3Ctext x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%2360a5fa'%3EAO%3C/text%3E%3C/svg%3E">
     <!-- Open Graph -->
     <meta property="og:title" content="Abdelrahman Osman Portfolio">
-    <meta property="og:description"
-        content="Modern portfolio showcasing projects, skills and contact information.">
+    <meta property="og:description" content="Modern portfolio showcasing projects, skills and contact information.">
     <meta property="og:type" content="website">
-
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Abdelrahman Osman | Portfolio">
-    <meta name="twitter:description"
-        content="Front-End Developer, UI Designer and Competitive Programmer.">
-
+    <meta name="twitter:description" content="Front-End Developer, UI Designer and Competitive Programmer.">
     <link rel="canonical" href="https://abdelrahmanosman2525.github.io/">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.17.0/devicon.min.css">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.17.0/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body data-theme="dark">
-
-    <a href="#main" class="skip-link">
-        Skip to main content
-    </a>
-
-
+    <a href="#main" class="skip-link">Skip to main content</a>
     <!-- LOADER -->
-    <div class="loader-screen">
-        <div class="loader"></div>
-    </div>
-
-
+    <div class="loader-screen"><div class="loader"></div></div>
     <!-- TOP PROGRESS BAR -->
     <div class="progress-bar"></div>
-
-
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar" aria-label="Primary">
-
-        <a href="#home" class="navbar-brand" id="navbarBrand">
-            AO
-        </a>
-
-        <button
-            class="nav-toggle"
-            id="navToggle"
-            aria-label="Toggle menu"
-            aria-expanded="false">
-
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
-
+        <a href="#home" class="navbar-brand" id="navbarBrand">AO</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
         <ul class="navbar-links" id="navbarLinks">
-
-            <li>
-                <a href="#home"
-                    class="nav-link"
-                    data-section="home">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#projects"
-                    class="nav-link"
-                    data-section="projects">
-                    Projects
-                </a>
-            </li>
-
-            <li>
-                <a href="#about"
-                    class="nav-link"
-                    data-section="about">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a href="#contact"
-                    class="nav-link"
-                    data-section="contact">
-                    Contact
-                </a>
-            </li>
-
+            <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+            <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+            <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
         </ul>
-
-
         <div class="navbar-end">
-
-            <span
-                class="scroll-percentage"
-                id="scrollPercentage">
-                0%
-            </span>
-
-            <button
-                id="themeToggleBtn"
-                class="theme-toggle-btn"
-                aria-label="Toggle light and dark mode">
-
-                <i class="fa-solid fa-sun"></i>
-
-            </button>
-
+            <span class="scroll-percentage" id="scrollPercentage">0%</span>
+            <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle light and dark mode"><i class="fa-solid fa-sun"></i></button>
         </div>
-
     </nav>
-
-
     <!-- BACKGROUND -->
     <div class="particles"></div>
-
     <div class="blur-orb one"></div>
     <div class="blur-orb two"></div>
     <div class="blur-orb three"></div>
-
-
     <main id="main">
-
-
-        <!-- ==========================
-                HOME
-        =========================== -->
-
+        <!-- ========================== HOME =========================== -->
         <section id="home" class="section-container">
-
             <header class="profile-header">
-
                 <div class="profile-wrapper">
-
                     <div class="profile-ring"></div>
-
-                    <img
-                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop&q=80"
-                        alt="Abdelrahman Osman"
-                        class="profile-img"
-                        width="800"
-                        height="800"
-                        fetchpriority="high"
-                        decoding="async">
-
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop&q=80" alt="Abdelrahman Osman" class="profile-img" width="800" height="800" fetchpriority="high" decoding="async">
                 </div>
-
-                <div class="status-badge">
-                    Available for Projects
-                </div>
-
+                <div class="status-badge">Available for Projects</div>
             </header>
-
-
             <div class="hero-content reveal">
-
-                <h1 class="name-title">
-                    Abdelrahman Mohammed Osman
-                </h1>
-
-                <p class="tagline">
-                    <span id="typingText">
-                        Front-End Developer
-                    </span>
-                </p>
-
-                <p class="bio">
-                    Passionate about crafting modern, high-performance web experiences.
-                    I enjoy combining clean architecture, beautiful interfaces and smooth
-                    animations to create products that users love.
-                </p>
-
+                <h1 class="name-title">Abdelrahman Mohammed Osman</h1>
+                <p class="tagline"><span id="typingText">Front-End Developer</span></p>
+                <p class="bio">Passionate about crafting modern, high-performance web experiences. I enjoy combining clean architecture, beautiful interfaces and smooth animations to create products that users love.</p>
             </div>
-
-
-            <section
-                class="stats-grid reveal delay-1"
-                aria-label="Quick stats">
-
-                <article class="stat-card">
-
-                    <h2
-                        class="stat-number"
-                        data-target="3">
-                        0
-                    </h2>
-
-                    <p class="stat-label">
-                        Projects
-                    </p>
-
-                </article>
-
-
-                <article class="stat-card">
-
-                    <h2
-                        class="stat-number"
-                        data-target="12">
-                        0
-                    </h2>
-
-                    <p class="stat-label">
-                        Technologies
-                    </p>
-
-                </article>
-
-
-                <article class="stat-card">
-
-                    <h2
-                        class="stat-number"
-                        data-target="182">
-                        0
-                    </h2>
-
-                    <p class="stat-label">
-                        Problems Solved
-                    </p>
-
-                </article>
-
+            <section class="stats-grid reveal delay-1" aria-label="Quick stats">
+                <article class="stat-card"><h2 class="stat-number" data-target="3">0</h2><p class="stat-label">Projects</p></article>
+                <article class="stat-card"><h2 class="stat-number" data-target="12">0</h2><p class="stat-label">Technologies</p></article>
+                <article class="stat-card"><h2 class="stat-number" data-target="182">0</h2><p class="stat-label">Problems Solved</p></article>
             </section>
-
-
-            <section
-                class="skills-grid reveal delay-2"
-                aria-label="Skills">
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon devicon-html5-plain"
-                        aria-hidden="true">
-                    </i>
-
-                    HTML5
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon devicon-css3-plain"
-                        aria-hidden="true">
-                    </i>
-
-                    CSS3
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon devicon-javascript-plain"
-                        aria-hidden="true">
-                    </i>
-
-                    JavaScript
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon devicon-cplusplus-plain"
-                        aria-hidden="true">
-                    </i>
-
-                    C++
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon devicon-react-original"
-                        aria-hidden="true">
-                    </i>
-
-                    React
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon devicon-nextjs-plain"
-                        aria-hidden="true">
-                    </i>
-
-                    Next.js
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon devicon-tailwindcss-plain"
-                        aria-hidden="true">
-                    </i>
-
-                    Tailwind CSS
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon devicon-nodejs-plain"
-                        aria-hidden="true">
-                    </i>
-
-                    Node.js
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon devicon-git-plain"
-                        aria-hidden="true">
-                    </i>
-
-                    Git & GitHub
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon fa-solid fa-pen-ruler"
-                        aria-hidden="true">
-                    </i>
-
-                    UI / UX
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon fa-solid fa-mobile-screen-button"
-                        aria-hidden="true">
-                    </i>
-
-                    Responsive Design
-
-                </div>
-
-
-                <div class="skill-chip">
-
-                    <i
-                        class="skill-icon fa-solid fa-trophy"
-                        aria-hidden="true">
-                    </i>
-
-                    Competitive Programming
-
-                </div>
-
+            <section class="skills-grid reveal delay-2" aria-label="Skills">
+                <div class="skill-chip"><i class="skill-icon devicon-html5-plain" aria-hidden="true"></i>HTML5</div>
+                <div class="skill-chip"><i class="skill-icon devicon-css3-plain" aria-hidden="true"></i>CSS3</div>
+                <div class="skill-chip"><i class="skill-icon devicon-javascript-plain" aria-hidden="true"></i>JavaScript</div>
+                <div class="skill-chip"><i class="skill-icon devicon-cplusplus-plain" aria-hidden="true"></i>C++</div>
+                <div class="skill-chip"><i class="skill-icon devicon-react-original" aria-hidden="true"></i>React</div>
+                <div class="skill-chip"><i class="skill-icon devicon-nextjs-plain" aria-hidden="true"></i>Next.js</div>
+                <div class="skill-chip"><i class="skill-icon devicon-tailwindcss-plain" aria-hidden="true"></i>Tailwind CSS</div>
+                <div class="skill-chip"><i class="skill-icon devicon-nodejs-plain" aria-hidden="true"></i>Node.js</div>
+                <div class="skill-chip"><i class="skill-icon devicon-git-plain" aria-hidden="true"></i>Git & GitHub</div>
+                <div class="skill-chip"><i class="skill-icon fa-solid fa-pen-ruler" aria-hidden="true"></i>UI / UX</div>
+                <div class="skill-chip"><i class="skill-icon fa-solid fa-mobile-screen-button" aria-hidden="true"></i>Responsive Design</div>
+                <div class="skill-chip"><i class="skill-icon fa-solid fa-trophy" aria-hidden="true"></i>Competitive Programming</div>
             </section>
-
-
-            <footer class="action-footer reveal delay-3">
-
-                <a
-                    href="#contact"
-                    class="btn btn-primary nav-scroll-link"
-                    aria-label="Go to contact section">
-
-                    Get In Touch
-
-                    <span>→</span>
-
-                </a>
-
-            </footer>
-
+            <footer class="action-footer reveal delay-3"><a href="#contact" class="btn btn-primary nav-scroll-link" aria-label="Go to contact section">Get In Touch <span>→</span></a></footer>
         </section>
-
-
-
-        <!-- ==========================
-                PROJECTS
-        =========================== -->
-
-        <section
-            id="projects"
-            class="section-container wide">
-
-
+        <!-- ========================== PROJECTS =========================== -->
+        <section id="projects" class="section-container wide">
             <header class="text-center">
-
-                <h2 class="section-title">
-                    Projects
-                </h2>
-
-                <p class="tagline">
-                    A few things I've been building
-                </p>
-
-                <p class="section-note">
-                    A selection of projects I've built and worked on.
-                </p>
-
+                <h2 class="section-title">Projects</h2>
+                <p class="tagline">A few things I've been building</p>
+                <p class="section-note">A selection of projects I've built and worked on.</p>
             </header>
-
-
-            <div
-                class="projects-grid"
-                id="projectsGrid">
-
-
-                <!-- ==========================
-                        PROJECT 1
-                =========================== -->
-
-                <article
-                    class="project-card reveal"
-                    data-project="0"
-                    tabindex="0"
-                    role="button"
-                    aria-haspopup="dialog"
-                    aria-label="View FindCoders-Hub details">
-
-
-                    <div
-                        class="project-thumb"
-                        style="--thumb-a:#3b82f6;--thumb-b:#1d4ed8;">
-
-                        <i class="devicon-react-original"></i>
-
-
-                        <div class="project-thumb-overlay">
-
-                            <span class="project-overlay-btn">
-
-                                <i class="fa-solid fa-eye"></i>
-
-                                View Project
-
-                            </span>
-
-
-                            <a
-                                href="https://github.com/abdelrahmanOsman2525/FindCoders-hub1"
-                                target="_blank"
-                                rel="noopener"
-                                class="project-overlay-icon"
-                                aria-label="Open GitHub repository">
-
-                                <i class="fa-brands fa-github"></i>
-
-                            </a>
-
+            <div class="projects-grid" id="projectsGrid">
+                <!-- ========================== PROJECT 1 =========================== -->
+                <article class="project-card reveal" data-project="0" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View FindCoders-Hub details">
+                    <div class="project-thumb" style="--thumb-a:#3b82f6;--thumb-b:#1d4ed8;"><i class="devicon-react-original"></i>
+                        <div class="project-thumb-overlay"><span class="project-overlay-btn"><i class="fa-solid fa-eye"></i> View Project</span>
+                            <a href="https://github.com/abdelrahmanOsman2525/FindCoders-hub1" target="_blank" rel="noopener" class="project-overlay-icon" aria-label="Open GitHub repository"><i class="fa-brands fa-github"></i></a>
                         </div>
-
                     </div>
-
-
-                    <div class="project-body">
-
-                        <h3 class="project-title">
-                            FindCoders-Hub
-                        </h3>
-
-                        <p class="project-desc">
-                            A full-stack task management app with boards,
-                            drag-and-drop columns and real-time updates.
-                        </p>
-
-                        <div class="project-tags">
-
-                            <span class="project-tag">
-                                React
-                            </span>
-
-                            <span class="project-tag">
-                                Node.js
-                            </span>
-
-                            <span class="project-tag">
-                                MongoDB
-                            </span>
-
-                        </div>
-
+                    <div class="project-body"><h3 class="project-title">FindCoders-Hub</h3><p class="project-desc">A full-stack task management app with boards, drag-and-drop columns and real-time updates.</p>
+                        <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Node.js</span><span class="project-tag">MongoDB</span></div>
                     </div>
-
                 </article>
-
-
-
-                <!-- ==========================
-                        PROJECT 2 - BUG HUNTER
-                =========================== -->
-
-                <article
-                    class="project-card reveal delay-1"
-                    data-project="1"
-                    tabindex="0"
-                    role="button"
-                    aria-haspopup="dialog"
-                    aria-label="View Bug Hunter details">
-
-
-                    <div
-                        class="project-thumb"
-                        style="--thumb-a:#3b82f6;--thumb-b:#06b6d4;">
-
-                        <i class="fa-solid fa-bug"></i>
-
-
-                        <div class="project-thumb-overlay">
-
-                            <span class="project-overlay-btn">
-
-                                <i class="fa-solid fa-eye"></i>
-
-                                View Project
-
-                            </span>
-
-
-                            <a
-                                href="https://github.com/abdelrahmanOsman2525/bug-hunter-game"
-                                target="_blank"
-                                rel="noopener"
-                                class="project-overlay-icon"
-                                aria-label="Open Bug Hunter GitHub repository">
-
-                                <i class="fa-brands fa-github"></i>
-
-                            </a>
-
+                <!-- ========================== PROJECT 2 - BUG HUNTER =========================== -->
+                <article class="project-card reveal delay-1" data-project="1" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Bug Hunter details">
+                    <div class="project-thumb" style="--thumb-a:#3b82f6;--thumb-b:#06b6d4;"><i class="fa-solid fa-bug"></i>
+                        <div class="project-thumb-overlay"><span class="project-overlay-btn"><i class="fa-solid fa-eye"></i> View Project</span>
+                            <a href="https://github.com/abdelrahmanOsman2525/bug-hunter-game" target="_blank" rel="noopener" class="project-overlay-icon" aria-label="Open Bug Hunter GitHub repository"><i class="fa-brands fa-github"></i></a>
                         </div>
-
                     </div>
-
-
-                    <div class="project-body">
-
-                        <h3 class="project-title">
-                            Bug Hunter
-                        </h3>
-
-                        <p class="project-desc">
-                            An interactive debugging game where players find
-                            programming bugs, choose the correct fix, and earn
-                            points while racing against the clock.
-                        </p>
-
-
-                        <div class="project-tags">
-
-                            <span class="project-tag">
-                                HTML5
-                            </span>
-
-                            <span class="project-tag">
-                                CSS3
-                            </span>
-
-                            <span class="project-tag">
-                                JavaScript
-                            </span>
-
-                        </div>
-
+                    <div class="project-body"><h3 class="project-title">Bug Hunter</h3><p class="project-desc">An interactive debugging game where players find programming bugs, choose the correct fix, and earn points while racing against the clock.</p>
+                        <div class="project-tags"><span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">JavaScript</span></div>
                     </div>
-
                 </article>
-
-
-
-                <!-- ==========================
-                        PROJECT 3
-                =========================== -->
-
-                <article
-                    class="project-card reveal delay-2"
-                    data-project="2"
-                    tabindex="0"
-                    role="button"
-                    aria-haspopup="dialog"
-                    aria-label="View Personal Portfolio details">
-
-
-                    <div
-                        class="project-thumb"
-                        style="--thumb-a:#8b5cf6;--thumb-b:#6d28d9;">
-
-                        <i class="devicon-nextjs-plain"></i>
-
-
-                        <div class="project-thumb-overlay">
-
-                            <span class="project-overlay-btn">
-
-                                <i class="fa-solid fa-eye"></i>
-
-                                View Project
-
-                            </span>
-
-
-                            <a
-                                href="https://github.com/abdelrahmanOsman2525/abdelrahmanOsman2525.github.io"
-                                target="_blank"
-                                rel="noopener"
-                                class="project-overlay-icon"
-                                aria-label="Open GitHub repository">
-
-                                <i class="fa-brands fa-github"></i>
-
-                            </a>
-
+                <!-- ========================== PROJECT 3 =========================== -->
+                <article class="project-card reveal delay-2" data-project="2" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Personal Portfolio details">
+                    <div class="project-thumb" style="--thumb-a:#8b5cf6;--thumb-b:#6d28d9;"><i class="devicon-nextjs-plain"></i>
+                        <div class="project-thumb-overlay"><span class="project-overlay-btn"><i class="fa-solid fa-eye"></i> View Project</span>
+                            <a href="https://github.com/abdelrahmanOsman2525/abdelrahmanOsman2525.github.io" target="_blank" rel="noopener" class="project-overlay-icon" aria-label="Open GitHub repository"><i class="fa-brands fa-github"></i></a>
                         </div>
-
                     </div>
-
-
-                    <div class="project-body">
-
-                        <h3 class="project-title">
-                            Personal Portfolio
-                        </h3>
-
-                        <p class="project-desc">
-                            This very portfolio — a hand-built, animated
-                            single-page site focused on performance and clean UI.
-                        </p>
-
-
-                        <div class="project-tags">
-
-                            <span class="project-tag">
-                                HTML5
-                            </span>
-
-                            <span class="project-tag">
-                                CSS3
-                            </span>
-
-                            <span class="project-tag">
-                                JavaScript
-                            </span>
-
-                        </div>
-
+                    <div class="project-body"><h3 class="project-title">Personal Portfolio</h3><p class="project-desc">This very portfolio — a hand-built, animated single-page site focused on performance and clean UI.</p>
+                        <div class="project-tags"><span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">JavaScript</span></div>
                     </div>
-
                 </article>
-
             </div>
-
         </section>
-
-
-
-        <!-- ==========================
-                PROJECT DETAILS MODAL
-        =========================== -->
-
-        <div
-            id="projectModal"
-            class="feedback-overlay"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="projectModalTitle"
-            hidden>
-
-
-            <div class="feedback-modal project-modal">
-
-
-                <button
-                    id="projectCloseBtn"
-                    class="feedback-close"
-                    aria-label="Close project details">
-
-                    <i class="fa-solid fa-xmark"></i>
-
-                </button>
-
-
-                <div
-                    class="project-modal-thumb"
-                    id="projectModalThumb">
-
-                    <i id="projectModalIcon"></i>
-
-                </div>
-
-
-                <h3
-                    id="projectModalTitle"
-                    class="feedback-title project-modal-title">
-                </h3>
-
-
-                <p
-                    class="details-desc"
-                    id="projectModalIdea">
-                </p>
-
-
-                <div class="details-block">
-
-                    <h5 class="details-block-title">
-
-                        <i class="fa-solid fa-star"></i>
-
-                        Features
-
-                    </h5>
-
-                    <ul
-                        class="details-list"
-                        id="projectModalFeatures">
-                    </ul>
-
-                </div>
-
-
-                <div class="details-block">
-
-                    <h5 class="details-block-title">
-
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-
-                        Challenges
-
-                    </h5>
-
-                    <ul
-                        class="details-list"
-                        id="projectModalChallenges">
-                    </ul>
-
-                </div>
-
-
-                <div
-                    class="details-tags"
-                    id="projectModalTech">
-                </div>
-
-
-                <div class="project-actions project-modal-actions">
-
-                    <a
-                        id="projectModalDemo"
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                        class="btn btn-secondary btn-sm">
-
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        Live Demo
-
-                    </a>
-
-
-                    <a
-                        id="projectModalGithub"
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                        class="btn btn-outline btn-sm">
-
-                        <i class="fa-brands fa-github"></i>
-
-                        Repository
-
-                    </a>
-
-                </div>
-
+        <!-- ========================== PROJECT DETAILS MODAL =========================== -->
+        <div id="projectModal" class="feedback-overlay" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle" hidden>
+            <div class="feedback-modal project-modal"><button id="projectCloseBtn" class="feedback-close" aria-label="Close project details"><i class="fa-solid fa-xmark"></i></button>
+                <div class="project-modal-thumb" id="projectModalThumb"><i id="projectModalIcon"></i></div>
+                <h3 id="projectModalTitle" class="feedback-title project-modal-title"></h3>
+                <p class="details-desc" id="projectModalIdea"></p>
+                <div class="details-block"><h5 class="details-block-title"><i class="fa-solid fa-star"></i> Features</h5><ul class="details-list" id="projectModalFeatures"></ul></div>
+                <div class="details-block"><h5 class="details-block-title"><i class="fa-solid fa-triangle-exclamation"></i> Challenges</h5><ul class="details-list" id="projectModalChallenges"></ul></div>
+                <div class="details-tags" id="projectModalTech"></div>
+                <div class="project-actions project-modal-actions"><a id="projectModalDemo" href="#" target="_blank" rel="noopener" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a><a id="projectModalGithub" href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i class="fa-brands fa-github"></i> Repository</a></div>
             </div>
-
         </div>
-
-
-
-        <!-- ==========================
-                ABOUT / TIMELINE
-        =========================== -->
-
-        <section
-            id="about"
-            class="section-container wide">
-
-
-            <header class="text-center">
-
-                <h2 class="section-title">
-                    About Me
-                </h2>
-
-                <p class="tagline">
-                    My journey so far
-                </p>
-
-            </header>
-
-
+        <!-- ========================== ABOUT / TIMELINE =========================== -->
+        <section id="about" class="section-container wide">
+            <header class="text-center"><h2 class="section-title">About Me</h2><p class="tagline">My journey so far</p></header>
             <div class="timeline-interactive">
-
-
                 <div class="timeline-stages-col">
-
-
-                    <div
-                        class="timeline-stages"
-                        id="timelineStages"
-                        role="tablist"
-                        aria-label="Journey timeline">
-
-
-                        <button
-                            class="stage-btn active"
-                            data-stage="0"
-                            role="tab"
-                            aria-selected="true">
-
-                            <span class="stage-dot"></span>
-
-                            <span class="stage-info">
-
-                                <span class="stage-year">
-                                    2024
-                                </span>
-
-                                <span class="stage-name">
-                                    Started Programming
-                                </span>
-
-                            </span>
-
-                        </button>
-
-
-                        <button
-                            class="stage-btn"
-                            data-stage="1"
-                            role="tab"
-                            aria-selected="false">
-
-                            <span class="stage-dot"></span>
-
-                            <span class="stage-info">
-
-                                <span class="stage-year">
-                                    2025
-                                </span>
-
-                                <span class="stage-name">
-                                    Competitive Programming
-                                </span>
-
-                            </span>
-
-                        </button>
-
-
-                        <button
-                            class="stage-btn"
-                            data-stage="2"
-                            role="tab"
-                            aria-selected="false">
-
-                            <span class="stage-dot"></span>
-
-                            <span class="stage-info">
-
-                                <span class="stage-year">
-                                    2026
-                                </span>
-
-                                <span class="stage-name">
-                                    Front-End Development
-                                </span>
-
-                            </span>
-
-                        </button>
-
-
-                        <button
-                            class="stage-btn stage-btn-future"
-                            data-stage="3"
-                            role="tab"
-                            aria-selected="false">
-
-                            <span class="stage-dot"></span>
-
-                            <span class="stage-info">
-
-                                <span class="stage-year">
-                                    Future
-                                </span>
-
-                                <span class="stage-name">
-                                    Software Engineer
-                                </span>
-
-                            </span>
-
-                        </button>
-
-
+                    <div class="timeline-stages" id="timelineStages" role="tablist" aria-label="Journey timeline">
+                        <button class="stage-btn active" data-stage="0" role="tab" aria-selected="true"><span class="stage-dot"></span><span class="stage-info"><span class="stage-year">2024</span><span class="stage-name">Started Programming</span></span></button>
+                        <button class="stage-btn" data-stage="1" role="tab" aria-selected="false"><span class="stage-dot"></span><span class="stage-info"><span class="stage-year">2025</span><span class="stage-name">Competitive Programming</span></span></button>
+                        <button class="stage-btn" data-stage="2" role="tab" aria-selected="false"><span class="stage-dot"></span><span class="stage-info"><span class="stage-year">2026</span><span class="stage-name">Front-End Development</span></span></button>
+                        <button class="stage-btn stage-btn-future" data-stage="3" role="tab" aria-selected="false"><span class="stage-dot"></span><span class="stage-info"><span class="stage-year">Future</span><span class="stage-name">Software Engineer</span></span></button>
                     </div>
-
-
-                    <p
-                        class="stages-swipe-hint"
-                        id="stagesSwipeHint"
-                        aria-hidden="true">
-
-                        <i class="fa-solid fa-arrows-left-right"></i>
-
-                        Swipe to see more
-
-                    </p>
-
-
-                    <div class="journey-progress">
-
-                        <span class="journey-progress-label">
-                            Journey Progress
-                        </span>
-
-                        <div class="journey-progress-track">
-
-                            <div
-                                class="journey-progress-fill"
-                                id="journeyProgressFill">
-                            </div>
-
-                        </div>
-
-                        <span
-                            class="journey-progress-text"
-                            id="journeyProgressText">
-
-                            Stage 1 of 4
-
-                        </span>
-
-                    </div>
-
-
+                    <p class="stages-swipe-hint" id="stagesSwipeHint" aria-hidden="true"><i class="fa-solid fa-arrows-left-right"></i> Swipe to see more</p>
+                    <div class="journey-progress"><span class="journey-progress-label">Journey Progress</span><div class="journey-progress-track"><div class="journey-progress-fill" id="journeyProgressFill"></div></div><span class="journey-progress-text" id="journeyProgressText">Stage 1 of 4</span></div>
                 </div>
-
-
-                <div
-                    class="timeline-details"
-                    id="timelineDetails">
-
-                    <span
-                        class="stage-counter"
-                        id="stageCounter">
-
-                        01 / 04
-
-                    </span>
-
-
-                    <div class="details-icon">
-
-                        <i
-                            id="detailsIcon"
-                            class="fa-solid fa-seedling">
-                        </i>
-
-                    </div>
-
-
-                    <h3
-                        class="details-year"
-                        id="detailsYear">
-
-                        2024
-
-                    </h3>
-
-
-                    <h4
-                        class="details-title"
-                        id="detailsTitle">
-
-                        Started Programming
-
-                    </h4>
-
-
-                    <p
-                        class="details-desc"
-                        id="detailsDesc">
-                    </p>
-
-
-                    <div class="details-block">
-
-                        <h5 class="details-block-title">
-
-                            <i class="fa-solid fa-crosshairs"></i>
-
-                            Focus Areas
-
-                        </h5>
-
-                        <ul
-                            class="details-list"
-                            id="detailsFocus">
-                        </ul>
-
-                    </div>
-
-
-                    <div class="details-block">
-
-                        <h5 class="details-block-title">
-
-                            <i class="fa-solid fa-flag-checkered"></i>
-
-                            Milestones
-
-                        </h5>
-
-                        <ul
-                            class="details-list"
-                            id="detailsMilestones">
-                        </ul>
-
-                    </div>
-
-
-                    <div
-                        class="details-tags"
-                        id="detailsTags">
-                    </div>
-
+                <div class="timeline-details" id="timelineDetails"><span class="stage-counter" id="stageCounter">01 / 04</span>
+                    <div class="details-icon"><i id="detailsIcon" class="fa-solid fa-seedling"></i></div>
+                    <h3 class="details-year" id="detailsYear">2024</h3><h4 class="details-title" id="detailsTitle">Started Programming</h4>
+                    <p class="details-desc" id="detailsDesc"></p>
+                    <div class="details-block"><h5 class="details-block-title"><i class="fa-solid fa-crosshairs"></i> Focus Areas</h5><ul class="details-list" id="detailsFocus"></ul></div>
+                    <div class="details-block"><h5 class="details-block-title"><i class="fa-solid fa-flag-checkered"></i> Milestones</h5><ul class="details-list" id="detailsMilestones"></ul></div>
+                    <div class="details-tags" id="detailsTags"></div>
                 </div>
-
             </div>
-
-
-
             <div class="about-extras">
-
-
-                <div class="about-card reveal">
-
-                    <h3 class="about-heading">
-
-                        <i class="fa-solid fa-user-circle"></i>
-
-                        Who I Am
-
-                    </h3>
-
-                    <p class="about-card-text">
-
-                        A passionate developer from Egypt with strong skills
-                        in Front-End Development and Competitive Programming.
-
-                    </p>
-
+                <div class="about-card reveal"><h3 class="about-heading"><i class="fa-solid fa-user-circle"></i> Who I Am</h3><p class="about-card-text">A passionate developer from Egypt with strong skills in Front-End Development and Competitive Programming.</p></div>
+                <div class="about-card reveal delay-1"><h3 class="about-heading"><i class="fa-solid fa-heart"></i> Interests</h3>
+                    <div class="interests-list"><span class="interest-tag"><i class="fa-solid fa-palette"></i> UI/UX</span><span class="interest-tag"><i class="fa-solid fa-gear"></i> Web Dev</span><span class="interest-tag"><i class="fa-solid fa-code"></i> Code</span></div>
                 </div>
-
-
-                <div class="about-card reveal delay-1">
-
-                    <h3 class="about-heading">
-
-                        <i class="fa-solid fa-heart"></i>
-
-                        Interests
-
-                    </h3>
-
-
-                    <div class="interests-list">
-
-                        <span class="interest-tag">
-
-                            <i class="fa-solid fa-palette"></i>
-
-                            UI/UX
-
-                        </span>
-
-
-                        <span class="interest-tag">
-
-                            <i class="fa-solid fa-gear"></i>
-
-                            Web Dev
-
-                        </span>
-
-
-                        <span class="interest-tag">
-
-                            <i class="fa-solid fa-code"></i>
-
-                            Code
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="about-card reveal delay-2 cp-extended">
-
-                    <h3 class="about-heading">
-
-                        <i class="fa-solid fa-trophy"></i>
-
-                        CP Stats
-
-                    </h3>
-
-
-                    <p class="cp-description">
-
-                        I actively practice competitive programming on
-
-                        <a
-                            href="https://codeforces.com/profile/abdelrahman.osman2525"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="cp-link">
-
-                            Codeforces
-
-                        </a>,
-
-                        solving algorithmic problems to stay sharp on
-                        data structures, complexity, and problem-solving speed.
-                        Constantly striving to improve my rating and master
-                        advanced algorithmic challenges.
-
-                    </p>
-
-
+                <div class="about-card reveal delay-2 cp-extended"><h3 class="about-heading"><i class="fa-solid fa-trophy"></i> CP Stats</h3>
+                    <p class="cp-description">I actively practice competitive programming on <a href="https://codeforces.com/profile/abdelrahman.osman2525" target="_blank" rel="noopener noreferrer" class="cp-link">Codeforces</a>, solving algorithmic problems to stay sharp on data structures, complexity, and problem-solving speed. Constantly striving to improve my rating and master advanced algorithmic challenges.</p>
                     <div class="cp-stats">
-
-                        <div class="cp-stat-item">
-
-                            <span class="cp-stat-value">
-                                1124
-                            </span>
-
-                            <span class="cp-stat-label">
-                                Codeforces Rating
-                            </span>
-
-                        </div>
-
-
-                        <div class="cp-stat-item">
-
-                            <span class="cp-stat-value">
-                                182
-                            </span>
-
-                            <span class="cp-stat-label">
-                                Problems Solved
-                            </span>
-
-                        </div>
-
+                        <div class="cp-stat-item"><span class="cp-stat-value">1124</span><span class="cp-stat-label">Codeforces Rating</span></div>
+                        <div class="cp-stat-item"><span class="cp-stat-value">182</span><span class="cp-stat-label">Problems Solved</span></div>
                     </div>
-
                 </div>
-
-
-                <div class="learning-card reveal delay-3">
-
-                    <h3 class="about-heading">
-
-                        <i class="fa-solid fa-seedling"></i>
-
-                        Currently Learning
-
-                    </h3>
-
-
-                    <ul class="learning-list">
-
-                        <li>
-                            <i class="devicon-nextjs-plain"></i>
-                            Next.js
-                        </li>
-
-                        <li>
-                            <i class="devicon-nodejs-plain"></i>
-                            Node.js
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-diagram-project"></i>
-                            Algorithms
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-sitemap"></i>
-                            System Design
-                        </li>
-
-                    </ul>
-
+                <div class="learning-card reveal delay-3"><h3 class="about-heading"><i class="fa-solid fa-seedling"></i> Currently Learning</h3>
+                    <ul class="learning-list"><li><i class="devicon-nextjs-plain"></i> Next.js</li><li><i class="devicon-nodejs-plain"></i> Node.js</li><li><i class="fa-solid fa-diagram-project"></i> Algorithms</li><li><i class="fa-solid fa-sitemap"></i> System Design</li></ul>
                 </div>
-
-
-                <div class="fun-facts-card reveal delay-1">
-
-                    <h3 class="about-heading">
-
-                        <i class="fa-solid fa-bolt"></i>
-
-                        Fun Facts
-
-                    </h3>
-
-
-                    <div class="fun-facts">
-
-                        <span class="fun-fact">
-
-                            <i class="fa-solid fa-mug-hot"></i>
-
-                            Coffee
-
-                        </span>
-
-
-                        <span class="fun-fact">
-
-                            <i class="fa-solid fa-laptop-code"></i>
-
-                            +500 Hours Coding
-
-                        </span>
-
-
-                        <span class="fun-fact">
-
-                            <i class="fa-solid fa-trophy"></i>
-
-                            Codeforces
-
-                        </span>
-
-
-                        <span class="fun-fact">
-
-                            <i class="fa-solid fa-earth-africa"></i>
-
-                            Egypt
-
-                        </span>
-
-                    </div>
-
+                <div class="fun-facts-card reveal delay-1"><h3 class="about-heading"><i class="fa-solid fa-bolt"></i> Fun Facts</h3>
+                    <div class="fun-facts"><span class="fun-fact"><i class="fa-solid fa-mug-hot"></i> Coffee</span><span class="fun-fact"><i class="fa-solid fa-laptop-code"></i> +500 Hours Coding</span><span class="fun-fact"><i class="fa-solid fa-trophy"></i> Codeforces</span><span class="fun-fact"><i class="fa-solid fa-earth-africa"></i> Egypt</span></div>
                 </div>
-
             </div>
-
         </section>
-
-
-
-        <!-- ==========================
-                CODING STATS
-        =========================== -->
-
-        <section
-            id="coding-stats"
-            class="section-container wide">
-
-
-            <header class="text-center">
-
-                <h2 class="section-title">
-                    Coding Stats
-                </h2>
-
-                <p class="tagline">
-                    Live from GitHub & Codeforces
-                </p>
-
-            </header>
-
-
-            <div
-                class="live-stats-grid"
-                id="liveStatsGrid">
-
-
+        <!-- ========================== CODING STATS =========================== -->
+        <section id="coding-stats" class="section-container wide">
+            <header class="text-center"><h2 class="section-title">Coding Stats</h2><p class="tagline">Live from GitHub & Codeforces</p></header>
+            <div class="live-stats-grid" id="liveStatsGrid">
+                <article class="live-stat-card"><i class="fa-brands fa-github live-stat-icon"></i><h3 class="live-stat-number" id="ghRepos">3</h3><p class="live-stat-label">Public Repos</p></article>
+                <article class="live-stat-card"><i class="fa-solid fa-star live-stat-icon"></i><h3 class="live-stat-number" id="ghStars">67</h3><p class="live-stat-label">GitHub Stars</p></article>
+                <article class="live-stat-card cf-rating-card" id="cfRatingCard"><i class="fa-solid fa-ranking-star live-stat-icon"></i><h3 class="live-stat-number" id="cfRating">1124</h3><p class="live-stat-label" id="cfRankLabel">Codeforces Rating</p>
+                    <div class="cf-rating-bar"><div class="cf-rating-bar-fill" id="cfRatingBarFill"></div><div class="cf-rating-marker" id="cfRatingMarker"></div></div>
+                </article>
                 <article class="live-stat-card">
-
-                    <i class="fa-brands fa-github live-stat-icon"></i>
-
-                    <h3
-                        class="live-stat-number"
-                        id="ghRepos">
-
-                        3
-
-                    </h3>
-
-                    <p class="live-stat-label">
-                        Public Repos
-                    </p>
-
+                    <div class="cf-icon-ring"><i class="fa-solid fa-code live-stat-icon"></i></div>
+                    <h3 class="live-stat-number" id="cfSolved">182</h3><p class="live-stat-label">Problems Solved</p>
                 </article>
-
-
-                <article class="live-stat-card">
-
-                    <i class="fa-solid fa-star live-stat-icon"></i>
-
-                    <h3
-                        class="live-stat-number"
-                        id="ghStars">
-
-                        67
-
-                    </h3>
-
-                    <p class="live-stat-label">
-                        GitHub Stars
-                    </p>
-
-                </article>
-
-
-                <article
-                    class="live-stat-card cf-rating-card"
-                    id="cfRatingCard">
-
-                    <i class="fa-solid fa-ranking-star live-stat-icon"></i>
-
-                    <h3
-                        class="live-stat-number"
-                        id="cfRating">
-
-                        1124
-
-                    </h3>
-
-                    <p
-                        class="live-stat-label"
-                        id="cfRankLabel">
-
-                        Codeforces Rating
-
-                    </p>
-
-
-                    <div class="cf-rating-bar">
-
-                        <div
-                            class="cf-rating-bar-fill"
-                            id="cfRatingBarFill">
-                        </div>
-
-                        <div
-                            class="cf-rating-marker"
-                            id="cfRatingMarker">
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="live-stat-card">
-
-                    <div class="cf-icon-ring">
-
-                        <i class="fa-solid fa-code live-stat-icon"></i>
-
-                    </div>
-
-
-                    <h3
-                        class="live-stat-number"
-                        id="cfSolved">
-
-                        182
-
-                    </h3>
-
-
-                    <p class="live-stat-label">
-                        Problems Solved
-                    </p>
-
-                </article>
-
             </div>
-
-
-            <p class="section-note">
-
-                Updated automatically from GitHub and Codeforces
-                (Codeforces count reflects the regular archive,
-                may not include older acmsguru problems).
-
-            </p>
-
+            <p class="section-note">Updated automatically from GitHub and Codeforces (Codeforces count reflects the regular archive, may not include older acmsguru problems).</p>
         </section>
-
-
-
-        <!-- ==========================
-                CONTACT
-        =========================== -->
-
-        <section
-            id="contact"
-            class="section-container">
-
-
-            <header class="text-center">
-
-                <h2 class="section-title">
-                    Let's Connect
-                </h2>
-
-                <p class="tagline">
-                    Have an idea? Let's build something amazing.
-                </p>
-
-            </header>
-
-
+        <!-- ========================== CONTACT =========================== -->
+        <section id="contact" class="section-container">
+            <header class="text-center"><h2 class="section-title">Let's Connect</h2><p class="tagline">Have an idea? Let's build something amazing.</p></header>
             <section class="contact-card-list">
-
-
-                <article
-                    class="contact-card reveal"
-                    data-href="https://mail.google.com/mail/?view=cm&fs=1&to=abdelrahman.osman2525@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-href-target="_blank">
-
-
-                    <div class="contact-icon">
-
-                        <i class="fa-solid fa-envelope"></i>
-
-                    </div>
-
-
-                    <div class="contact-info">
-
-                        <span class="contact-label">
-                            Email
-                        </span>
-
-                        <span
-                            id="emailText"
-                            class="contact-value">
-
-                            abdelrahman.osman2525@gmail.com
-
-                        </span>
-
-                    </div>
-
-
-                    <div class="contact-action-group">
-
-                        <button
-                            id="copyEmailBtn"
-                            class="btn btn-secondary"
-                            aria-label="Copy Email">
-
-                            Copy
-
-                        </button>
-
-
-                        <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=abdelrahman.osman2525@gmail.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-action"
-                            aria-label="Send Email">
-
-                            Send <span>→</span>
-
-                        </a>
-
-                    </div>
-
+                <article class="contact-card reveal" data-href="https://mail.google.com/mail/?view=cm&fs=1&to=abdelrahman.osman2525@gmail.com" target="_blank" rel="noopener noreferrer" data-href-target="_blank">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="contact-info"><span class="contact-label">Email</span><span id="emailText" class="contact-value">abdelrahman.osman2525@gmail.com</span></div>
+                    <div class="contact-action-group"><button id="copyEmailBtn" class="btn btn-secondary" aria-label="Copy Email">Copy</button><a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdelrahman.osman2525@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-action" aria-label="Send Email">Send <span>→</span></a></div>
                 </article>
-
-
-
-                <article
-                    class="contact-card reveal delay-1"
-                    data-href="https://t.me/AI_Abdelrahman_Osman"
-                    data-href-target="_blank">
-
-
-                    <div class="contact-icon">
-
-                        <i class="fa-brands fa-telegram"></i>
-
-                    </div>
-
-
-                    <div class="contact-info">
-
-                        <span class="contact-label">
-                            Telegram
-                        </span>
-
-                        <span class="contact-value">
-                            @AI_Abdelrahman_Osman
-                        </span>
-
-                    </div>
-
-
-                    <a
-                        href="https://t.me/AI_Abdelrahman_Osman"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-action"
-                        aria-label="Open Telegram">
-
-                        Visit <span>→</span>
-
-                    </a>
-
+                <article class="contact-card reveal delay-1" data-href="https://t.me/AI_Abdelrahman_Osman" data-href-target="_blank">
+                    <div class="contact-icon"><i class="fa-brands fa-telegram"></i></div>
+                    <div class="contact-info"><span class="contact-label">Telegram</span><span class="contact-value">@AI_Abdelrahman_Osman</span></div>
+                    <a href="https://t.me/AI_Abdelrahman_Osman" target="_blank" rel="noopener noreferrer" class="contact-action" aria-label="Open Telegram">Visit <span>→</span></a>
                 </article>
-
-
-
-                <article
-                    class="contact-card reveal delay-2"
-                    data-href="https://github.com/abdelrahmanOsman2525"
-                    data-href-target="_blank">
-
-
-                    <div class="contact-icon">
-
-                        <i class="fa-brands fa-github"></i>
-
-                    </div>
-
-
-                    <div class="contact-info">
-
-                        <span class="contact-label">
-                            GitHub
-                        </span>
-
-                        <span class="contact-value">
-                            github.com/abdelrahmanOsman2525
-                        </span>
-
-                    </div>
-
-
-                    <a
-                        href="https://github.com/abdelrahmanOsman2525"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-action"
-                        aria-label="Open GitHub">
-
-                        Explore <span>→</span>
-
-                    </a>
-
+                <article class="contact-card reveal delay-2" data-href="https://github.com/abdelrahmanOsman2525" data-href-target="_blank">
+                    <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+                    <div class="contact-info"><span class="contact-label">GitHub</span><span class="contact-value">github.com/abdelrahmanOsman2525</span></div>
+                    <a href="https://github.com/abdelrahmanOsman2525" target="_blank" rel="noopener noreferrer" class="contact-action" aria-label="Open GitHub">Explore <span>→</span></a>
                 </article>
-
-
-
-                <article
-                    class="contact-card reveal delay-3"
-                    data-href="https://codeforces.com/profile/abdelrahman.osman2525"
-                    data-href-target="_blank">
-
-
-                    <div class="contact-icon">
-
-                        <i class="fa-solid fa-ranking-star"></i>
-
-                    </div>
-
-
-                    <div class="contact-info">
-
-                        <span class="contact-label">
-                            Codeforces
-                        </span>
-
-                        <span class="contact-value">
-                            abdelrahman.osman2525
-                        </span>
-
-                    </div>
-
-
-                    <a
-                        href="https://codeforces.com/profile/abdelrahman.osman2525"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-action"
-                        aria-label="Open Codeforces">
-
-                        Visit <span>→</span>
-
-                    </a>
-
+                <article class="contact-card reveal delay-3" data-href="https://codeforces.com/profile/abdelrahman.osman2525" data-href-target="_blank">
+                    <div class="contact-icon"><i class="fa-solid fa-ranking-star"></i></div>
+                    <div class="contact-info"><span class="contact-label">Codeforces</span><span class="contact-value">abdelrahman.osman2525</span></div>
+                    <a href="https://codeforces.com/profile/abdelrahman.osman2525" target="_blank" rel="noopener noreferrer" class="contact-action" aria-label="Open Codeforces">Visit <span>→</span></a>
                 </article>
-
-
             </section>
-
         </section>
-
     </main>
-
-
-
-    <!-- ==========================
-            FEEDBACK WIDGET
-    =========================== -->
-
-    <button
-        id="feedbackFab"
-        class="feedback-fab"
-        aria-haspopup="dialog"
-        aria-controls="feedbackModal"
-        aria-label="Share feedback">
-
-        <i class="fa-solid fa-comment-dots"></i>
-
-        <span class="feedback-fab-text">
-            Feedback
-        </span>
-
-    </button>
-
-
-    <div
-        id="feedbackModal"
-        class="feedback-overlay"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="feedbackModalTitle"
-        hidden>
-
-
-        <div class="feedback-modal">
-
-
-            <button
-                id="feedbackCloseBtn"
-                class="feedback-close"
-                aria-label="Close feedback form">
-
-                <i class="fa-solid fa-xmark"></i>
-
-            </button>
-
-
+    <!-- ========================== FEEDBACK WIDGET =========================== -->
+    <button id="feedbackFab" class="feedback-fab" aria-haspopup="dialog" aria-controls="feedbackModal" aria-label="Share feedback"><i class="fa-solid fa-comment-dots"></i><span class="feedback-fab-text">Feedback</span></button>
+    <div id="feedbackModal" class="feedback-overlay" role="dialog" aria-modal="true" aria-labelledby="feedbackModalTitle" hidden>
+        <div class="feedback-modal"><button id="feedbackCloseBtn" class="feedback-close" aria-label="Close feedback form"><i class="fa-solid fa-xmark"></i></button>
             <div class="feedback-header">
-
-                <div class="feedback-icon">
-
-                    <i class="fa-solid fa-comment-dots"></i>
-
-                </div>
-
-
-                <h3
-                    id="feedbackModalTitle"
-                    class="feedback-title">
-
-                    Share Your Feedback
-
-                </h3>
-
-
-                <p class="feedback-subtitle">
-
-                    Loved the portfolio?
-                    Found something off?
-                    Let me know.
-
-                </p>
-
+                <div class="feedback-icon"><i class="fa-solid fa-comment-dots"></i></div>
+                <h3 id="feedbackModalTitle" class="feedback-title">Share Your Feedback</h3>
+                <p class="feedback-subtitle">Loved the portfolio? Found something off? Let me know.</p>
             </div>
-
-
-            <form
-                id="feedbackForm"
-                class="feedback-form"
-                novalidate>
-
-
-                <div class="feedback-field">
-
-                    <label class="feedback-label">
-                        How would you rate it?
-                    </label>
-
-
-                    <div
-                        class="star-rating"
-                        id="starRating"
-                        role="radiogroup"
-                        aria-label="Rating">
-
-
-                        <button
-                            type="button"
-                            class="star-btn"
-                            data-value="1"
-                            role="radio"
-                            aria-checked="false"
-                            aria-label="1 star">
-
-                            <i class="fa-solid fa-star"></i>
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="star-btn"
-                            data-value="2"
-                            role="radio"
-                            aria-checked="false"
-                            aria-label="2 stars">
-
-                            <i class="fa-solid fa-star"></i>
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="star-btn"
-                            data-value="3"
-                            role="radio"
-                            aria-checked="false"
-                            aria-label="3 stars">
-
-                            <i class="fa-solid fa-star"></i>
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="star-btn"
-                            data-value="4"
-                            role="radio"
-                            aria-checked="false"
-                            aria-label="4 stars">
-
-                            <i class="fa-solid fa-star"></i>
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="star-btn"
-                            data-value="5"
-                            role="radio"
-                            aria-checked="false"
-                            aria-label="5 stars">
-
-                            <i class="fa-solid fa-star"></i>
-
-                        </button>
-
+            <form id="feedbackForm" class="feedback-form" novalidate>
+                <div class="feedback-field"><label class="feedback-label">How would you rate it?</label>
+                    <div class="star-rating" id="starRating" role="radiogroup" aria-label="Rating">
+                        <button type="button" class="star-btn" data-value="1" role="radio" aria-checked="false" aria-label="1 star"><i class="fa-solid fa-star"></i></button>
+                        <button type="button" class="star-btn" data-value="2" role="radio" aria-checked="false" aria-label="2 stars"><i class="fa-solid fa-star"></i></button>
+                        <button type="button" class="star-btn" data-value="3" role="radio" aria-checked="false" aria-label="3 stars"><i class="fa-solid fa-star"></i></button>
+                        <button type="button" class="star-btn" data-value="4" role="radio" aria-checked="false" aria-label="4 stars"><i class="fa-solid fa-star"></i></button>
+                        <button type="button" class="star-btn" data-value="5" role="radio" aria-checked="false" aria-label="5 stars"><i class="fa-solid fa-star"></i></button>
                     </div>
-
-
-                    <input
-                        type="hidden"
-                        name="rating"
-                        id="feedbackRatingValue"
-                        value="">
-
+                    <input type="hidden" name="rating" id="feedbackRatingValue" value="">
                 </div>
-
-
-
                 <div class="feedback-row">
-
-
-                    <div class="feedback-field">
-
-                        <label
-                            for="feedbackName"
-                            class="feedback-label">
-
-                            Name
-
-                            <span class="feedback-optional">
-                                (optional)
-                            </span>
-
-                        </label>
-
-
-                        <input
-                            type="text"
-                            id="feedbackName"
-                            name="name"
-                            class="feedback-input"
-                            placeholder="Your name"
-                            autocomplete="name"
-                            maxlength="60">
-
-                    </div>
-
-
-
-                    <div class="feedback-field">
-
-                        <label
-                            for="feedbackEmail"
-                            class="feedback-label">
-
-                            Email
-
-                            <span class="feedback-optional">
-                                (optional — so I can reply)
-                            </span>
-
-                        </label>
-
-
-                        <input
-                            type="email"
-                            id="feedbackEmail"
-                            name="email"
-                            class="feedback-input"
-                            placeholder="you@example.com"
-                            autocomplete="email">
-
-
-                        <span
-                            class="feedback-error"
-                            id="feedbackEmailError"
-                            hidden>
-
-                            Please enter a valid email address,
-                            or leave it empty.
-
-                        </span>
-
-                    </div>
-
+                    <div class="feedback-field"><label for="feedbackName" class="feedback-label">Name <span class="feedback-optional">(optional)</span></label><input type="text" id="feedbackName" name="name" class="feedback-input" placeholder="Your name" autocomplete="name" maxlength="60"></div>
+                    <div class="feedback-field"><label for="feedbackEmail" class="feedback-label">Email <span class="feedback-optional">(optional — so I can reply)</span></label><input type="email" id="feedbackEmail" name="email" class="feedback-input" placeholder="you@example.com" autocomplete="email"><span class="feedback-error" id="feedbackEmailError" hidden>Please enter a valid email address, or leave it empty.</span></div>
                 </div>
-
-
-
-                <div class="feedback-field">
-
-                    <label
-                        for="feedbackMessage"
-                        class="feedback-label">
-
-                        Your feedback
-
-                    </label>
-
-
-                    <textarea
-                        id="feedbackMessage"
-                        name="message"
-                        class="feedback-input feedback-textarea"
-                        placeholder="Tell me what you think…"
-                        rows="4"
-                        required
-                        maxlength="600">
-                    </textarea>
-
-
-                    <span
-                        class="feedback-error"
-                        id="feedbackError"
-                        hidden>
-
-                        Please write a short message before sending.
-
-                    </span>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="btn btn-primary feedback-submit"
-                    id="feedbackSubmitBtn">
-
-                    <span class="feedback-submit-text">
-                        Send Feedback
-                    </span>
-
-                    <span>
-                        →
-                    </span>
-
-                </button>
-
+                <div class="feedback-field"><label for="feedbackMessage" class="feedback-label">Your feedback</label><textarea id="feedbackMessage" name="message" class="feedback-input feedback-textarea" placeholder="Tell me what you think…" rows="4" required maxlength="600"></textarea><span class="feedback-error" id="feedbackError" hidden>Please write a short message before sending.</span></div>
+                <button type="submit" class="btn btn-primary feedback-submit" id="feedbackSubmitBtn"><span class="feedback-submit-text">Send Feedback</span> <span>→</span></button>
             </form>
-
         </div>
-
     </div>
-
-
-
     <!-- FOOTER -->
-
     <footer class="site-footer">
-
         <div class="footer-inner">
-
-
-            <p class="footer-copy">
-
-                ©
-
-                <span id="footerYear"></span>
-
-                Abdelrahman Osman.
-                All rights reserved.
-
-            </p>
-
-
+            <p class="footer-copy">© <span id="footerYear"></span> Abdelrahman Osman. All rights reserved.</p>
             <div class="footer-socials">
-
-
-                <a
-                    href="mailto:abdelrahman.osman2525@gmail.com"
-                    aria-label="Email">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                </a>
-
-
-                <a
-                    href="https://t.me/AI_Abdelrahman_Osman"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Telegram">
-
-                    <i class="fa-brands fa-telegram"></i>
-
-                </a>
-
-
-                <a
-                    href="https://github.com/abdelrahmanOsman2525"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="GitHub">
-
-                    <i class="fa-brands fa-github"></i>
-
-                </a>
-
-
-                <a
-                    href="https://codeforces.com/profile/abdelrahman.osman2525"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Codeforces">
-
-                    <i class="fa-solid fa-ranking-star"></i>
-
-                </a>
-
+                <a href="mailto:abdelrahman.osman2525@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://t.me/AI_Abdelrahman_Osman" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://github.com/abdelrahmanOsman2525" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://codeforces.com/profile/abdelrahman.osman2525" target="_blank" rel="noopener" aria-label="Codeforces"><i class="fa-solid fa-ranking-star"></i></a>
             </div>
-
-
-            <button
-                id="backToTopBtn"
-                class="back-to-top"
-                aria-label="Back to top">
-
-                <i class="fa-solid fa-arrow-up"></i>
-
-            </button>
-
+            <button id="backToTopBtn" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
-
     </footer>
-
-
-
     <!-- TOAST CONTAINER -->
-
-    <div
-        class="toast-container"
-        id="toastContainer">
-    </div>
-
-
-
+    <div class="toast-container" id="toastContainer"></div>
     <!-- JAVASCRIPT -->
-
     <script src="script.js"></script>
-
 </body>
-
 </html>
