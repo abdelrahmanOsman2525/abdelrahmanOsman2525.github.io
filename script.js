@@ -203,21 +203,22 @@ function initScrollSpy() {
 /*==================================================
                 LOADER
 ==================================================*/
-
 function initLoader() {
-    window.addEventListener(
-        "load",
-        () => {
-            setTimeout(
-                () => {
-                    loader.classList.add(
-                        "hide"
-                    );
-                },
-                600
-            );
-        }
-    );
+    if (!loader) return;
+
+    const hideLoader = () => {
+        setTimeout(() => {
+            loader.classList.add("hide");
+        }, 600);
+    };
+
+    // Hide normally when everything finishes loading
+    window.addEventListener("load", hideLoader);
+
+    // Safety fallback for mobile / slow external resources
+    setTimeout(() => {
+        loader.classList.add("hide");
+    }, 3000);
 }
 
 /*==================================================
