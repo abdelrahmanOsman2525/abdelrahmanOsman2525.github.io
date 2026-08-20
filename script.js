@@ -1193,24 +1193,30 @@ const PROJECTS_DATA = [
         demo: "https://abdelrahmanosman20.wixsite.com/futurecoders-hub-1"
     },
     {
-        title: "Weather Now",
-        icon: "fa-solid fa-cloud-sun",
-        colorA: "#0ea5e9",
-        colorB: "#0369a1",
-        idea: "A clean weather dashboard that pulls live forecasts from a public API, built to be fast, readable and useful at a glance rather than cluttered with data.",
-        features: [
-            { icon: "fa-solid fa-magnifying-glass", text: "City search with autocomplete" },
-            { icon: "fa-solid fa-location-crosshairs", text: "One-tap geolocation forecast" },
-            { icon: "fa-solid fa-calendar-days", text: "5-day outlook view" }
-        ],
-        challenges: [
-            { icon: "fa-solid fa-gauge-high", text: "Handling API rate limits gracefully" },
-            { icon: "fa-solid fa-icons", text: "Mapping weather codes to clear icon states" }
-        ],
-        technologies: ["JavaScript", "REST API", "CSS3"],
-        github: "https://github.com/abdelrahmanOsman2525",
-        demo: "https://github.com/abdelrahmanOsman2525"
-    },
+    title: "Bug Hunter",
+    icon: "fa-solid fa-bug",
+    colorA: "#3b82f6",
+    colorB: "#06b6d4",
+
+    idea: "An interactive debugging game where players find programming bugs, choose the correct fix, and earn points while racing against the clock.",
+
+    features: [
+        { icon: "fa-solid fa-bug", text: "Find and identify programming bugs" },
+        { icon: "fa-solid fa-clock", text: "Timed challenges with limited lives" },
+        { icon: "fa-solid fa-fire", text: "Score, streak and best score system" }
+    ],
+
+    challenges: [
+        { icon: "fa-solid fa-code", text: "Creating different debugging scenarios" },
+        { icon: "fa-solid fa-gamepad", text: "Balancing difficulty, timing and scoring" }
+    ],
+
+    technologies: ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
+
+    github: "https://github.com/abdelrahmanOsman2525/bug-hunter-game",
+
+    demo: "https://abdelrahmanosman2525.github.io/bug-hunter-game/"
+    }, 
     {
         title: "Personal Portfolio",
         icon: "devicon-nextjs-plain",
